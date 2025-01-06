@@ -1,53 +1,7 @@
 import 'dart:math';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-// Events
-abstract class GameEvent {}
-
-class StartNewGameEvent extends GameEvent {
-  final int maxNumber;
-  final int maxAttempts;
-
-  StartNewGameEvent({required this.maxNumber, required this.maxAttempts});
-}
-
-class MakeGuessEvent extends GameEvent {
-  final int guess;
-
-  MakeGuessEvent({required this.guess});
-}
-
-// States
-abstract class GameState {}
-
-class GameInitial extends GameState {}
-
-class GameInProgress extends GameState {
-  final int remainingAttempts;
-  final int maxNumber;
-  final List<int> previousGuesses;
-  final String? hint;
-
-  GameInProgress({
-    required this.remainingAttempts,
-    required this.maxNumber,
-    required this.previousGuesses,
-    this.hint,
-  });
-}
-
-class GameWon extends GameState {
-  final int targetNumber;
-  final int attemptsUsed;
-
-  GameWon({required this.targetNumber, required this.attemptsUsed});
-}
-
-class GameLost extends GameState {
-  final int targetNumber;
-
-  GameLost({required this.targetNumber});
-}
+import 'events/game_event.dart';
+import 'states/game_state.dart';
 
 class GameBloc extends Bloc<GameEvent, GameState> {
   late int _targetNumber;
