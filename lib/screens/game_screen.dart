@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../bloc/events/game_event.dart';
 import '../bloc/game_bloc.dart';
+import '../bloc/states/game_state.dart';
 import 'settings_screen.dart';
 
 class GameScreen extends StatefulWidget {
