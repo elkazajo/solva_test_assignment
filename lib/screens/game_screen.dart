@@ -81,7 +81,7 @@ class _GameScreenState extends State<GameScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Я загадал число в между 1 и ${state.maxNumber}',
+            'Я загадал число между 1 и ${state.maxNumber}',
             style: Theme.of(context).textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ),
